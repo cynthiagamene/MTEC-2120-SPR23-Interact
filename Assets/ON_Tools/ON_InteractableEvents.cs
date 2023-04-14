@@ -110,15 +110,17 @@ namespace ON{
 					triggerCounter++;
 					if (maxTriggers == 0 || triggerCounter <= maxTriggers) {
 
-                        //if (dontRetriggerUntilExit && exitCounter == 0)
-                        //	OnTrigger ();
-                        //else if(!dontRetriggerUntilExit)
-                        //	OnTrigger ();
+						//if (dontRetriggerUntilExit && exitCounter == 0)
+						//	OnTrigger ();
+						//else if(!dontRetriggerUntilExit)
+						//	OnTrigger ();
 
 
-                        if (Input.GetMouseButtonDown(0))
+						if (Input.GetMouseButtonDown(0))
                         {
-                            OnTrigger();
+							Debug.Log("OnTrigger!");
+
+							OnTrigger();
                             if (exitCounter < 1)
                                 exitCounter++;
                         }

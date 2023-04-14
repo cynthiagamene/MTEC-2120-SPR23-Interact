@@ -255,7 +255,7 @@ namespace Kvant
             return buffer;
         }
 
-        void UpdateKernelShader()
+        public void UpdateKernelShader()
         {
             var m = _kernelMaterial;
 

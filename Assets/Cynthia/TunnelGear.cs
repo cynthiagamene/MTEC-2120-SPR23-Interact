@@ -9,6 +9,7 @@ public class TunnelGear : MonoBehaviour
     public GameObject tunnel;
     private Tunnel _tunnel; 
     public ReaktorLink reaktor;
+    public float tunnelRadius = 100f; 
 
     void Awake()
     {
@@ -25,14 +26,14 @@ public class TunnelGear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateTunnel(reaktor.Output); 
+        UpdateTunnel(reaktor.Output +tunnelRadius); 
     }
 
 
     void UpdateTunnel(float param)
     {
         _tunnel.radius = param;
-        _tunnel.UpdateKernelShader();
+        _tunnel.Reset();
     }
 
 }

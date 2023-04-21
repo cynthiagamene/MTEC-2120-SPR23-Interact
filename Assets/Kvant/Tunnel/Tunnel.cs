@@ -308,7 +308,7 @@ namespace Kvant
 
         #region MonoBehaviour Functions
 
-        void Reset()
+        public void Reset()
         {
             _needsReset = true;
         }

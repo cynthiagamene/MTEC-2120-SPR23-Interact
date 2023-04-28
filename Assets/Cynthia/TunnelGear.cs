@@ -9,7 +9,9 @@ public class TunnelGear : MonoBehaviour
     public GameObject tunnel;
     private Tunnel _tunnel; 
     public ReaktorLink reaktor;
-    public float tunnelRadius = 100f; 
+    public float tunnelRadius = 100f;
+    public GameObject player; // Reference to the player object
+    public Color newColor; // The new color to assign to the player
 
     void Awake()
     {
@@ -26,7 +28,12 @@ public class TunnelGear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateTunnel(reaktor.Output +tunnelRadius); 
+        UpdateTunnel(reaktor.Output +tunnelRadius);
+        // Check for keyboard input and change player color accordingly
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            player.GetComponent<Renderer>().material.color = newColor;
+        }
     }
 
 
